@@ -9,13 +9,15 @@
     <div class="page-header">
       <% include ../helpers/navbar %>
 
-      <h1>Dogs are the best!</h1>
+      <h1>API WEB APP</h1>
+      <h2>Check the weather!</h2>
     </div>
-
-    <p>Click on the button for a surprise.</p>
-
-    <button onClick="showPicture()" class="btn btn-dark">Click me</button>
-
-    <div id="image"></div>
+    <div>
+      <input type="text" class="search" placeholder="Enter city name..." />
+      <button type="button" onClick="searchWeather()">Search</button>
+      <div class="error-message"></div>
+    </div>
+    <div class="city"></div>
+    <div class="temp"></div>
   </body>
 </html>
