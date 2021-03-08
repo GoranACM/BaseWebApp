@@ -11,6 +11,9 @@
 // $(document).ready(function () {
 //   getWeather();
 // });
+$(document).ready(function () {
+  getPosts();
+});
 
 function getWeather(searchQuery) {
   var url =
@@ -85,7 +88,7 @@ function addMessage(postTitle, postBody) {
       alert('Title and/or Post cannot be empty!');
     } else {
       // Data saved successfully!
-      alert('Post saved to DB!');
+      alert('Post saved to DB! Check it out below!');
       setTimeout(function () {
         //your code to be executed after 1 second
         window.location.reload();
@@ -98,4 +101,21 @@ function handleMessageFormSubmit() {
   var postTitle = $('#post-title').val();
   var postBody = $('#post-body').val();
   addMessage(postTitle, postBody);
+}
+
+function getPosts() {
+  return firebase
+    .database()
+    .ref('posts')
+    .once('value')
+    .then((snapshot) => {
+      var posts = snapshot.val();
+      // ...
+      for (var postKey in posts) {
+        var post = posts[postKey];
+        $('#post-listing').append(
+          '<div>' + post.title + ' - ' + post.body + '</div>'
+        );
+      }
+    });
 }
