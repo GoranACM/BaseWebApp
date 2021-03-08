@@ -8,13 +8,18 @@
     <!-- Check out more components here: http://getbootstrap.com/components/ -->
     <div class="page-header">
       <% include ../helpers/navbar %>
-      <h1>About page</h1>
+      <h1>Database Page</h1>
     </div>
 
-    <p>Click on the button for a surprise.</p>
-
-    <button onClick="showPicture()" class="btn btn-dark">Click me</button>
-
-    <div id="image"></div>
+    <button onClick="handleSignIn()">Login</button>
+    <br />
+    <br />
+    <form onSubmit="handleMessageFormSubmit()" action="#">
+      Title: <br />
+      <input id="post-title" /><br />
+      Post: <br />
+      <textarea id="post-body"></textarea><br />
+      <button>Submit</button>
+    </form>
   </body>
 </html>

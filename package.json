@@ -4,7 +4,7 @@
   "description": "A sample Node.js app using Express 4",
   "main": "index.js",
   "scripts": {
-    "start": "node project/start.js"
+    "start": "set NODE_ENV=dev && node project/start.js"
   },
   "dependencies": {
     "ejs": "^2.5.6",

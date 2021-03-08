@@ -31,7 +31,30 @@
 ></script>
 
 <script>
-  var apiKey = '<%=process.env.API_KEY%>';
+  var apiKey = '<%= process.env.API_KEY %>';
+</script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+<!-- Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: 'AIzaSyBn5j60wjI9lh3Zshq2dCZLpDinFaOOaG4',
+    authDomain: 'message-stream-8a060.firebaseapp.com',
+    databaseURL: 'https://message-stream-8a060-default-rtdb.firebaseio.com',
+    projectId: 'message-stream-8a060',
+    storageBucket: 'message-stream-8a060.appspot.com',
+    messagingSenderId: '452181529789',
+    appId: '1:452181529789:web:29dc47826c69cc91d053d4',
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 </script>
 
 <!-- then our app's own js file -->
